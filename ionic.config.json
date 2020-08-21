@@ -1,0 +1,7 @@
+{
+  "name": "react-data-storage-sqlite-app-stazrter",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
