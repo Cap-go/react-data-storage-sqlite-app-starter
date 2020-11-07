@@ -1,6 +1,6 @@
 {
   "name": "react-data-storage-sqlite-app-starter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "homepage": "./",
   "dependencies": {
@@ -19,7 +19,7 @@
     "@types/react-dom": "latest",
     "@types/react-router": "latest",
     "@types/react-router-dom": "latest",
-    "capacitor-data-storage-sqlite": "^2.4.2-1",
+    "capacitor-data-storage-sqlite": "^2.4.2",
     "ionicons": "latest",
     "react": "latest",
     "react-dom": "latest",
@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@capacitor/cli": "2.4.2",
-    "react-data-storage-sqlite-hook": "0.0.1"
+    "react-data-storage-sqlite-hook": "0.0.2"
   },
   "description": "React App Starter for capacitor-data-storage-sqlite",
   "repository": {

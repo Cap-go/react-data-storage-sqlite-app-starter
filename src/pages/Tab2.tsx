@@ -7,7 +7,8 @@ const Tab2: React.FC = () => {
   const [log, setLog] = useState<string[]>([]);
 
   const {openStore, getItem, setItem, getAllKeys, getAllValues,
-    getAllKeysValues, isKey, setTable, removeItem, clear} = useStorageSQLite();
+    getFilterValues, getAllKeysValues, isKey, setTable,
+    removeItem, clear} = useStorageSQLite();
   useEffect(() => {
     async function testSimpleStore() {
       setLog((log) => log.concat("Tab 2 page\n")); 
@@ -59,13 +60,67 @@ const Tab2: React.FC = () => {
           setLog((log) => log.concat('iskey tel ' + iskey + "\n")); 
             const rClear = await clear();
           if( rClear ) setLog((log) => log.concat('clear table "testtable" ' + res + "\n")); 
+          // store data to test getFilterValues
+          await setItem("session","Session Lowercase Opened");
+          const data = {'a':20,'b':'Hello World','c':{'c1':40,'c2':'cool'}};
+          await setItem("testJson",JSON.stringify(data));
+          await setItem("Session1","Session Uppercase 1 Opened");
+          await setItem("MySession2foo","Session Uppercase 2 Opened");
+          const data1 = 243.567;
+          await setItem("testNumber",data1.toString());
+          await setItem("Mylsession2foo","Session Lowercase 2 Opened");
+          await setItem("EnduSession","Session Uppercase End Opened");
+          await setItem("Endlsession","Session Lowercase End Opened");
+          await setItem("SessionReact","Session React Opened");
+          // Get All Values
+          const values: string[] = await getAllValues();
+          if(values.length !== 9) {
+            setLog((log) => log.concat("getAllValues failed \n"));
+          } else {
+            for(let i = 0; i< values.length;i++) {
+              setLog((log) => log.concat(' key[' + i + "] = " + values[i] + "\n"));
+            }
+            setLog((log) => log.concat("getAllValues was successful \n"));
+          }
+          // Get Filter Values Starting with "session"
+          const stValues: string[] = await getFilterValues("%session");
+          if(stValues.length !== 3) {
+            setLog((log) => log.concat("getFilterValues Start failed \n"));
+          } else {
+            for(let i = 0; i< stValues.length;i++) {
+              setLog((log) => log.concat(' key[' + i + "] = " + stValues[i] + "\n"));
+            }
+            setLog((log) => log.concat("getFilterValues Start was successful \n"));
+          }
+          // Get Filter Values Ending with "session"
+          const endValues: string[] = await getFilterValues("session%");
+          if(endValues.length !== 3) {
+            setLog((log) => log.concat("getFilterValues End failed \n"));
+          } else {
+            for(let i = 0; i< endValues.length;i++) {
+              setLog((log) => log.concat(' key[' + i + "] = " + endValues[i] + "\n"));
+            }
+            setLog((log) => log.concat("getFilterValues Start was successful \n"));
+          }
+          // Get Filter Values Containing "session"
+          const contValues: string[] = await getFilterValues("session");
+          if(contValues.length !== 7) {
+            setLog((log) => log.concat("getFilterValues End failed \n"));
+          } else {
+            for(let i = 0; i< contValues.length;i++) {
+              setLog((log) => log.concat(' key[' + i + "] = " + contValues[i] + "\n"));
+            }
+            setLog((log) => log.concat("getFilterValues Start was successful \n"));
+          }
+   
         }
       }
     }
     testSimpleStore();
   }, [ openStore, getItem, setItem, getAllKeys, getAllValues,
-    getAllKeysValues, isKey, setTable, removeItem, clear]);   
-  
+    getFilterValues, getAllKeysValues, isKey, setTable,
+    removeItem, clear]);   
+
 
   return (
     <IonPage>
