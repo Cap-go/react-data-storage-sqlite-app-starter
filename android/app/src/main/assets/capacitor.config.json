@@ -1,13 +1,13 @@
 {
-  "appId": "com.jeep.app.react.hook.datastoragesqlite",
-  "appName": "react-data-storage-sqlite-app-starter",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "build",
-  "plugins": {
-    "SplashScreen": {
-      "launchShowDuration": 0
-    }
-  },
-  "cordova": {}
+	"appId": "com.jeep.app.react.hook.datastoragesqlite",
+	"appName": "react-data-storage-sqlite-app-starter",
+	"bundledWebRuntime": false,
+	"npmClient": "npm",
+	"webDir": "build",
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 0
+		}
+	},
+	"cordova": {}
 }

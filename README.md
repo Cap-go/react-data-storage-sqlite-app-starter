@@ -2,6 +2,8 @@
 
 <h3 align="center">Ionic/React Data Storage SQLite App Starter</h3>
 <p align="center"><strong><code>react-data-storage-sqlite-app-starter</code></strong></p>
+<br>
+<p align="center" style="font-size:50px;color:red"><strong>CAPACITOR 3</strong></p><br>
 <p align="center">Ionic/React application demonstrating the use of the</p>
 <p align="center"><strong><code>capacitor-data-storage-sqlite</code></strong></p>
 <br>

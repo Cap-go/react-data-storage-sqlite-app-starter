@@ -9,11 +9,13 @@ const Tab3: React.FC = () => {
   const {openStore, getItem} = useStorageSQLite();
   useEffect( () => {
     async function getFromStore() {
-      const resOpen =  await openStore({});
-      if(resOpen) {
+      try {
+        await openStore({});
         const mess = await getItem('message');
         const name =  await getItem('name');
         if( mess && name ) setValue(mess + name);
+      } catch (err) {
+        setValue(err);
       }
     }
     getFromStore();
