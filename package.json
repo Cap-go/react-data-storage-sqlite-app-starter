@@ -1,16 +1,16 @@
 {
   "name": "react-data-storage-sqlite-app-starter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "homepage": "./",
   "dependencies": {
-    "@capacitor-community/electron": "^3.0.0-rc.6",
-    "@capacitor/android": "^3.0.0",
-    "@capacitor/core": "3.0.0",
-    "@capacitor/dialog": "^1.0.0",
-    "@capacitor/ios": "^3.0.0",
-    "@ionic/react": "^5.5.0",
-    "@ionic/react-router": "^5.5.0",
+    "@capacitor-community/electron": "^4.0.3",
+    "@capacitor/android": "^3.2.0",
+    "@capacitor/core": "3.2.0",
+    "@capacitor/dialog": "^1.0.2",
+    "@capacitor/ios": "^3.2.0",
+    "@ionic/react": "^5.7.0",
+    "@ionic/react-router": "^5.7.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.6.3",
@@ -20,8 +20,8 @@
     "@types/react-dom": "^16.9.10",
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
-    "capacitor-data-storage-sqlite": "^3.0.1",
-    "ionicons": "^5.4.0",
+    "capacitor-data-storage-sqlite": "^3.2.0",
+    "ionicons": "^5.5.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router": "^5.2.0",
@@ -68,8 +68,8 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "3.0.0",
-    "react-data-storage-sqlite-hook": "^1.0.0"
+    "@capacitor/cli": "3.2.0",
+    "react-data-storage-sqlite-hook": "^1.1.0"
   },
   "description": "React App Starter for capacitor-data-storage-sqlite",
   "repository": {

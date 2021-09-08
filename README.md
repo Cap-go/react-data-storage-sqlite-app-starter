@@ -33,6 +33,9 @@ git remote rm origin
 npm install
 cd electron
 npm install
+npm i --save sqlite3
+npm i --save-dev @types/sqlite3
+npm run build
 cd ..
 ```
 

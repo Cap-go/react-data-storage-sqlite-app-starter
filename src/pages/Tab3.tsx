@@ -10,11 +10,11 @@ const Tab3: React.FC = () => {
   useEffect( () => {
     async function getFromStore() {
       try {
-        await openStore({});
-        const mess = await getItem('message');
-        const name =  await getItem('name');
-        if( mess && name ) setValue(mess + name);
-      } catch (err) {
+        await openStore({database: "testImport", table: "myStore2"});
+        const test1 = await getItem('test1');
+        const test3=  await getItem('test3');
+        if( test1 && test3 ) setValue(`${test1} : ${test3}`);
+      } catch (err: any) {
         setValue(err);
       }
     }
